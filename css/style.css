@@ -12,7 +12,11 @@
 
     --main-color: #00eeff;
 
-    --border-color: rgba(255, 255, 255, 0.09);
+    --border-color:
+        rgba(255, 255, 255, .09);
+
+    --header-offset:
+        clamp(7.5rem, 8vw, 9rem);
 }
 
 
@@ -31,7 +35,9 @@
     border: none;
     outline: none;
 
-    font-family: 'Poppins', sans-serif;
+    font-family:
+        'Poppins',
+        sans-serif;
 }
 
 
@@ -41,6 +47,9 @@ html {
     overflow-x: hidden;
 
     scroll-behavior: smooth;
+
+    scroll-padding-top:
+        var(--header-offset);
 }
 
 
@@ -50,21 +59,25 @@ html::-webkit-scrollbar {
 
 
 html::-webkit-scrollbar-track {
-    background: var(--bg-color);
+    background:
+        var(--bg-color);
 }
 
 
 html::-webkit-scrollbar-thumb {
-    background: var(--main-color);
+    background:
+        var(--main-color);
 
     border-radius: 1rem;
 }
 
 
 body {
-    background: var(--bg-color);
+    background:
+        var(--bg-color);
 
-    color: var(--text-color);
+    color:
+        var(--text-color);
 
     overflow-x: hidden;
 
@@ -74,21 +87,21 @@ body {
 }
 
 
-/* =========================
-   SECCIONES
-========================= */
-
 section {
-    min-height: auto;
+    width: 100%;
 
-    padding: 7rem 9%;
+    padding:
+        clamp(5rem, 6vw, 7rem)
+        clamp(4.5%, 7vw, 9%);
 
-    scroll-margin-top: 7rem;
+    scroll-margin-top:
+        var(--header-offset);
 }
 
 
 span {
-    color: var(--main-color);
+    color:
+        var(--main-color);
 }
 
 
@@ -104,20 +117,27 @@ span {
 
     width: 100%;
 
-    padding: 1.8rem 6%;
+    padding:
+        1.8rem
+        clamp(4.5%, 5vw, 6%);
 
-    background: rgba(31, 36, 45, .94);
+    background:
+        rgba(31, 36, 45, .94);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(12px);
 
     display: flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
+
     align-items: center;
 
     z-index: 1000;
 
-    border-bottom: 1px solid transparent;
+    border-bottom:
+        1px solid transparent;
 
     transition:
         background .3s ease,
@@ -126,18 +146,22 @@ span {
 
 
 .header.sticky {
-    border-color: var(--border-color);
+    border-color:
+        var(--border-color);
 }
 
 
 .logo {
-    font-size: 2.7rem;
+    font-size:
+        clamp(2.4rem, 2.5vw, 2.7rem);
 
-    color: var(--text-color);
+    color:
+        var(--text-color);
 
     font-weight: 700;
 
-    letter-spacing: -.05rem;
+    letter-spacing:
+        -.05rem;
 
     flex-shrink: 0;
 }
@@ -161,26 +185,31 @@ span {
 
     align-items: center;
 
-    gap: 2.6rem;
+    gap:
+        clamp(1.7rem, 2vw, 2.6rem);
 }
 
 
 .navbar a {
-    font-size: 1.55rem;
+    font-size:
+        clamp(1.4rem, 1.4vw, 1.55rem);
 
-    color: var(--text-color);
+    color:
+        var(--text-color);
 
     font-weight: 500;
 
     white-space: nowrap;
 
-    transition: .25s ease;
+    transition:
+        color .25s ease;
 }
 
 
 .navbar a:hover,
 .navbar a.active {
-    color: var(--main-color);
+    color:
+        var(--main-color);
 }
 
 
@@ -203,11 +232,15 @@ span {
 
     border-radius: 50%;
 
-    border: 1px solid var(--border-color);
+    border:
+        1px solid
+        var(--border-color);
 
-    background: var(--card-color);
+    background:
+        var(--card-color);
 
-    color: var(--main-color);
+    color:
+        var(--main-color);
 
     font-size: 1.8rem;
 
@@ -221,9 +254,11 @@ span {
 
 
 .theme-toggle:hover {
-    transform: rotate(15deg);
+    transform:
+        rotate(15deg);
 
-    border-color: var(--main-color);
+    border-color:
+        var(--main-color);
 }
 
 
@@ -234,7 +269,8 @@ span {
 #menu-icon {
     font-size: 3.6rem;
 
-    color: var(--text-color);
+    color:
+        var(--text-color);
 
     display: none;
 
@@ -249,52 +285,65 @@ span {
 .home {
     min-height: 100vh;
 
-    padding-top: 10rem;
+    padding-top:
+        clamp(10rem, 10vw, 12rem);
 
     display: flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
+
     align-items: center;
 
-    gap: 7rem;
+    gap:
+        clamp(3rem, 6vw, 7rem);
 }
 
 
 .home-content {
+    flex: 1;
+
     max-width: 72rem;
 }
 
 
 .home-content h1 {
-    font-size: clamp(4.6rem, 6vw, 7rem);
+    font-size:
+        clamp(4.3rem, 6vw, 7rem);
 
     font-weight: 800;
 
     line-height: 1.08;
 
-    letter-spacing: -.2rem;
+    letter-spacing:
+        -.2rem;
 }
 
 
 .home-content h2 {
-    font-size: clamp(2.5rem, 3vw, 3.7rem);
+    font-size:
+        clamp(2.35rem, 3vw, 3.7rem);
 
     line-height: 1.3;
 
-    margin: 1.4rem 0 2.2rem;
+    margin:
+        1.4rem 0 2.2rem;
 }
 
 
 .home-copy {
     max-width: 66rem;
 
-    font-size: 1.65rem;
+    font-size:
+        clamp(1.45rem, 1.4vw, 1.65rem);
 
     line-height: 1.8;
 
-    color: var(--muted-color);
+    color:
+        var(--muted-color);
 
-    margin-bottom: 3.2rem;
+    margin-bottom:
+        clamp(2.4rem, 3vw, 3.2rem);
 }
 
 
@@ -319,11 +368,15 @@ span {
 
     gap: .9rem;
 
-    padding: 1.15rem 2.5rem;
+    padding:
+        1.15rem 2.5rem;
 
-    background: var(--main-color);
+    background:
+        var(--main-color);
 
-    border: .2rem solid var(--main-color);
+    border:
+        .2rem solid
+        var(--main-color);
 
     border-radius: 4rem;
 
@@ -339,37 +392,43 @@ span {
 
     font-weight: 700;
 
-    transition: .25s ease;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
 }
 
 
 .btn:hover {
     box-shadow: none;
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 }
 
 
 .btn-outline {
-    background: transparent;
+    background:
+        transparent;
 
-    color: var(--main-color);
+    color:
+        var(--main-color);
 
     box-shadow: none;
 }
 
 
 .btn-outline:hover {
-    background: rgba(0, 238, 255, .08);
+    background:
+        rgba(0, 238, 255, .08);
 }
 
 
 /* =========================
-   IMÁGENES HOME / ABOUT
+   IMAGEN HOME
 ========================= */
 
-.home-img,
-.about-img {
+.home-img {
     display: flex;
 
     justify-content: center;
@@ -380,7 +439,8 @@ span {
 
 
 .image-frame {
-    width: min(34vw, 43rem);
+    width:
+        clamp(24rem, 34vw, 43rem);
 
     aspect-ratio: 1 / 1;
 
@@ -439,11 +499,13 @@ span {
 .heading {
     text-align: center;
 
-    font-size: clamp(3.7rem, 5vw, 5rem);
+    font-size:
+        clamp(3.7rem, 5vw, 5rem);
 
     line-height: 1.2;
 
-    margin-bottom: 4.5rem;
+    margin-bottom:
+        clamp(3rem, 4vw, 4.5rem);
 }
 
 
@@ -457,39 +519,137 @@ span {
     justify-content: center;
     align-items: center;
 
-    gap: 8rem;
+    background:
+        var(--second-bg-color);
+}
 
-    background: var(--second-bg-color);
+
+.about-card {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 105rem;
+
+    padding:
+        clamp(3rem, 5vw, 5rem);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(39, 45, 56, .98),
+            rgba(31, 36, 45, .98)
+        );
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius:
+        clamp(1.8rem, 2vw, 2.4rem);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 2rem 5rem
+        rgba(0, 0, 0, .18);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.about-card::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: .3rem;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--main-color),
+            transparent
+        );
+}
+
+
+.about-card::after {
+    content: '';
+
+    position: absolute;
+
+    width: 24rem;
+    height: 24rem;
+
+    top: -13rem;
+    right: -10rem;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 238, 255, .06);
+
+    filter:
+        blur(1rem);
+
+    pointer-events: none;
+}
+
+
+.about-card:hover {
+    transform:
+        translateY(-.4rem);
+
+    border-color:
+        rgba(0, 238, 255, .3);
+
+    box-shadow:
+        0 2.5rem 6rem
+        rgba(0, 0, 0, .24);
 }
 
 
 .about-content {
-    max-width: 72rem;
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
 }
 
 
 .about-content .heading {
-    text-align: left;
+    text-align: center;
 
-    margin-bottom: 1.6rem;
-}
-
-
-.about-content h3 {
-    font-size: 2.3rem;
-
-    margin-bottom: 1.5rem;
+    margin-bottom:
+        clamp(1.8rem, 2vw, 2.4rem);
 }
 
 
 .about-content > p {
-    font-size: 1.55rem;
+    max-width: 90rem;
 
-    line-height: 1.85;
+    margin-left: auto;
+    margin-right: auto;
 
-    color: var(--muted-color);
+    font-size:
+        clamp(1.45rem, 1.4vw, 1.6rem);
 
-    margin-bottom: 1.4rem;
+    line-height: 1.9;
+
+    color:
+        var(--muted-color);
+
+    text-align: left;
 }
 
 
@@ -501,40 +661,90 @@ span {
     display: grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
 
-    gap: 1.2rem;
+    gap:
+        clamp(1.2rem, 2vw, 1.8rem);
 
-    margin-top: 3rem;
+    margin-top:
+        clamp(2.4rem, 3vw, 3.2rem);
 }
 
 
-.about-highlights div {
-    background: rgba(31, 36, 45, .6);
+.about-highlight {
+    position: relative;
 
-    border: 1px solid var(--border-color);
+    padding:
+        clamp(1.8rem, 2vw, 2.2rem);
 
-    border-radius: 1.3rem;
+    background:
+        rgba(50, 57, 70, .55);
 
-    padding: 1.7rem 1.5rem;
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius: 1.5rem;
+
+    overflow: hidden;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
 }
 
 
-.about-highlights strong {
+.about-highlight::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: .3rem;
+    height: 100%;
+
+    background:
+        var(--main-color);
+}
+
+
+.about-highlight:hover {
+    transform:
+        translateY(-.3rem);
+
+    border-color:
+        rgba(0, 238, 255, .3);
+
+    background:
+        rgba(50, 57, 70, .8);
+}
+
+
+.about-highlight strong {
     display: block;
 
-    font-size: 2.15rem;
+    font-size:
+        clamp(1.9rem, 2vw, 2.2rem);
 
-    color: var(--main-color);
+    color:
+        var(--main-color);
 
-    margin-bottom: .3rem;
+    margin-bottom: .4rem;
 }
 
 
-.about-highlights span {
-    color: var(--muted-color);
+.about-highlight span {
+    color:
+        var(--muted-color);
 
-    font-size: 1.2rem;
+    font-size:
+        clamp(1.15rem, 1.2vw, 1.3rem);
 }
 
 
@@ -543,19 +753,22 @@ span {
 ========================= */
 
 .skills {
-    background: var(--bg-color);
+    background:
+        var(--bg-color);
 }
 
 
 .skills h2 {
-    color: var(--text-color);
+    color:
+        var(--text-color);
 }
 
 
 .skills .container {
     max-width: 120rem;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 }
 
 
@@ -563,14 +776,19 @@ span {
     display: grid;
 
     grid-template-columns:
-        repeat(6, minmax(0, 1fr));
+        repeat(
+            auto-fit,
+            minmax(15rem, 1fr)
+        );
 
-    gap: 1.8rem;
+    gap:
+        clamp(1rem, 1.5vw, 1.8rem);
 }
 
 
 .skills .container .bar {
-    min-height: 12.5rem;
+    min-height:
+        clamp(11rem, 11vw, 12.5rem);
 
     padding: 1rem;
 
@@ -580,24 +798,31 @@ span {
         0 4px 10px
         rgba(0, 0, 0, .2);
 
-    background: rgba(0, 0, 22, .9);
+    background:
+        rgba(0, 0, 22, .9);
 
     border:
         1px solid
         rgba(255, 255, 255, .035);
 
-    transition: .2s ease;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease,
+        border-color .2s ease;
 }
 
 
 .skills .container .bar:hover {
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 
     box-shadow:
         0 8px 18px
         rgba(0, 2, 68, .8);
 
-    background: rgba(0, 0, 0, .9);
+    background:
+        rgba(0, 0, 0, .9);
 
     border-color:
         rgba(0, 238, 255, .25);
@@ -621,8 +846,11 @@ span {
 
 
 .skills .container .bar .info img {
-    width: 5rem;
-    height: 5rem;
+    width:
+        clamp(4.5rem, 5vw, 5rem);
+
+    height:
+        clamp(4.5rem, 5vw, 5rem);
 
     object-fit: contain;
 }
@@ -636,16 +864,20 @@ span {
 
     place-items: center;
 
-    font-size: 4rem;
+    font-size:
+        clamp(3.5rem, 4vw, 4rem);
 
-    color: var(--main-color);
+    color:
+        var(--main-color);
 }
 
 
 .skills .container .bar .info span {
-    color: var(--text-color);
+    color:
+        var(--text-color);
 
-    font-size: 1.55rem;
+    font-size:
+        clamp(1.35rem, 1.4vw, 1.55rem);
 
     line-height: 1.25;
 
@@ -653,13 +885,13 @@ span {
 }
 
 
-
 /* =========================
    EXPERIENCIA
 ========================= */
 
 .experience {
-    background: var(--second-bg-color);
+    background:
+        var(--second-bg-color);
 }
 
 
@@ -667,18 +899,24 @@ span {
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
 
-    gap: 3rem;
+    gap:
+        clamp(2rem, 3vw, 3rem);
 
     max-width: 118rem;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 }
 
 
 .timeline-column > h3 {
-    font-size: 2rem;
+    font-size:
+        clamp(1.8rem, 2vw, 2rem);
 
     margin-bottom: 2rem;
 
@@ -691,14 +929,16 @@ span {
 
 
 .timeline-column > h3 i {
-    color: var(--main-color);
+    color:
+        var(--main-color);
 }
 
 
 .timeline-card {
     position: relative;
 
-    background: var(--card-color);
+    background:
+        var(--card-color);
 
     border:
         1px solid
@@ -710,16 +950,20 @@ span {
 
     border-radius: 1.2rem;
 
-    padding: 2.2rem;
+    padding:
+        clamp(1.8rem, 2vw, 2.2rem);
 
     margin-bottom: 1.8rem;
 
-    transition: .25s ease;
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
 }
 
 
 .timeline-card:hover {
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 
     border-color:
         rgba(0, 238, 255, .35);
@@ -734,14 +978,17 @@ span {
 
 
 .timeline-card h4 {
-    font-size: 1.9rem;
+    font-size:
+        clamp(1.7rem, 1.7vw, 1.9rem);
 
-    margin: .7rem 0 .4rem;
+    margin:
+        .7rem 0 .4rem;
 }
 
 
 .timeline-place {
-    color: var(--muted-color);
+    color:
+        var(--muted-color);
 
     font-size: 1.4rem;
 
@@ -752,7 +999,8 @@ span {
 .timeline-card ul {
     padding-left: 1.8rem;
 
-    color: var(--muted-color);
+    color:
+        var(--muted-color);
 }
 
 
@@ -770,20 +1018,20 @@ span {
 ========================= */
 
 .projects {
-    background: var(--bg-color);
+    background:
+        var(--bg-color);
 }
 
 
 .projects-carousel {
+    width: 100%;
+
     max-width: 120rem;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 }
 
-
-/* =========================
-   CARRUSEL
-========================= */
 
 .carousel-row {
     width: 100%;
@@ -791,13 +1039,14 @@ span {
     display: grid;
 
     grid-template-columns:
-        4.8rem
+        clamp(3.4rem, 4vw, 4.8rem)
         minmax(0, 1fr)
-        4.8rem;
+        clamp(3.4rem, 4vw, 4.8rem);
 
     align-items: center;
 
-    gap: 1.8rem;
+    gap:
+        clamp(.6rem, 1.5vw, 1.8rem);
 }
 
 
@@ -808,7 +1057,8 @@ span {
 
     overflow: hidden;
 
-    border-radius: 2rem;
+    border-radius:
+        clamp(1.5rem, 2vw, 2rem);
 }
 
 
@@ -834,32 +1084,38 @@ span {
 
     width: 100%;
 
-    flex: 0 0 100%;
+    flex:
+        0 0 100%;
 }
 
 
 /* =========================
-   COMPONENTE PROJECT CARD
+   TARJETA PROYECTO
 ========================= */
 
 .project-card {
     display: grid;
 
     grid-template-columns:
-        36% 64%;
+        minmax(30rem, 36%)
+        minmax(0, 1fr);
 
     width: 100%;
 
-    height: 40rem;
+    height:
+        clamp(34rem, 26vw, 37rem);
 
-    min-height: 40rem;
-    max-height: 40rem;
+    min-height: 0;
 
-    background: var(--card-color);
+    background:
+        var(--card-color);
 
-    border: 1px solid var(--border-color);
+    border:
+        1px solid
+        var(--border-color);
 
-    border-radius: 2rem;
+    border-radius:
+        clamp(1.5rem, 2vw, 2rem);
 
     overflow: hidden;
 
@@ -880,9 +1136,7 @@ span {
 
 
 /* =========================
-   COMPONENTE VISUAL
-   GENÉRICO PARA TODOS
-   LOS PROYECTOS
+   VISUAL PROYECTO
 ========================= */
 
 .project-visual {
@@ -894,75 +1148,78 @@ span {
     min-width: 0;
     min-height: 0;
 
-    padding: 0;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding:
+        clamp(.8rem, 1.2vw, 1.4rem);
 
     overflow: hidden;
 
     background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(0, 238, 255, .12),
+            transparent 65%
+        ),
         #102234;
 }
 
 
-/*
-   Este contenedor siempre ocupa
-   TODO el panel visual.
-*/
 .project-image-preview {
     width: 100%;
     height: 100%;
 
-    max-width: none;
-    max-height: none;
+    min-width: 0;
+    min-height: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
 
     overflow: hidden;
-
-    border-radius: 0;
 }
 
 
-/*
-   TODAS las imágenes de proyectos
-   tendrán exactamente el mismo
-   comportamiento automáticamente.
-*/
 .project-image-preview img {
     display: block;
 
     width: 100%;
     height: 100%;
 
-    max-width: none;
-    max-height: none;
+    max-width: 100%;
+    max-height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 
     object-position: center;
-
-    border-radius: 0;
-
-    filter: none;
 }
 
 
 /* =========================
-   CONTENIDO DEL PROYECTO
+   INFORMACIÓN PROYECTO
 ========================= */
 
 .project-content {
-    height: 100%;
-
     min-width: 0;
     min-height: 0;
 
-    padding: 3.2rem 4rem;
+    height: 100%;
+
+    padding:
+        clamp(2rem, 2.3vw, 2.8rem)
+        clamp(2rem, 3.5vw, 4rem);
 
     display: flex;
 
     flex-direction: column;
 
-    justify-content: center;
+    justify-content: flex-start;
 
-    overflow: hidden;
+    align-items: flex-start;
 }
 
 
@@ -973,7 +1230,8 @@ span {
 
     flex-shrink: 0;
 
-    padding: .55rem 1rem;
+    padding:
+        .55rem 1rem;
 
     border-radius: 2rem;
 
@@ -984,9 +1242,11 @@ span {
         1px solid
         rgba(0, 238, 255, .18);
 
-    color: var(--main-color);
+    color:
+        var(--main-color);
 
-    font-size: 1.1rem;
+    font-size:
+        clamp(1rem, 1vw, 1.1rem);
 
     text-transform: uppercase;
 
@@ -997,20 +1257,22 @@ span {
 
 
 .project-content h3 {
-    flex-shrink: 0;
+    font-size:
+        clamp(2.5rem, 2.6vw, 3rem);
 
-    font-size: 3rem;
-
-    margin: 1rem 0 1.3rem;
+    margin:
+        1rem 0 1.3rem;
 }
 
 
 .project-content p {
     max-width: 62rem;
 
-    color: var(--muted-color);
+    color:
+        var(--muted-color);
 
-    font-size: 1.45rem;
+    font-size:
+        clamp(1.35rem, 1.3vw, 1.45rem);
 
     line-height: 1.7;
 }
@@ -1027,14 +1289,14 @@ span {
 
     gap: .8rem;
 
-    flex-shrink: 0;
-
-    margin-top: 1.8rem;
+    margin-top:
+        clamp(1.2rem, 1.5vw, 1.6rem);
 }
 
 
 .project-tech span {
-    padding: .7rem 1.2rem;
+    padding:
+        .7rem 1.2rem;
 
     border-radius: 2rem;
 
@@ -1045,19 +1307,23 @@ span {
         1px solid
         rgba(0, 238, 255, .18);
 
-    color: var(--main-color);
+    color:
+        var(--main-color);
 
-    font-size: 1.2rem;
+    font-size:
+        clamp(1.05rem, 1vw, 1.2rem);
 
     font-weight: 500;
 }
 
 
 /* =========================
-   PROJECT LINKS
+   GITHUB
 ========================= */
 
 .project-links {
+    width: 100%;
+
     display: flex;
 
     justify-content: center;
@@ -1065,18 +1331,19 @@ span {
 
     flex-wrap: wrap;
 
-    flex-shrink: 0;
-
     gap: 1rem;
 
-    margin-top: 2rem;
+    margin-top:
+        clamp(1.3rem, 1.5vw, 1.7rem);
 }
 
 
 .project-links .btn {
-    padding: .9rem 1.8rem;
+    padding:
+        .9rem 1.8rem;
 
-    font-size: 1.35rem;
+    font-size:
+        clamp(1.2rem, 1.2vw, 1.35rem);
 }
 
 
@@ -1085,10 +1352,11 @@ span {
 ========================= */
 
 .project-arrow {
-    position: static;
+    width:
+        clamp(3.4rem, 4vw, 4.4rem);
 
-    width: 4.4rem;
-    height: 4.4rem;
+    height:
+        clamp(3.4rem, 4vw, 4.4rem);
 
     display: grid;
 
@@ -1102,11 +1370,14 @@ span {
         1px solid
         var(--border-color);
 
-    background: var(--card-color);
+    background:
+        var(--card-color);
 
-    color: var(--text-color);
+    color:
+        var(--text-color);
 
-    font-size: 1.5rem;
+    font-size:
+        clamp(1.2rem, 1.4vw, 1.5rem);
 
     cursor: pointer;
 
@@ -1121,12 +1392,14 @@ span {
 
 
 .project-arrow:hover {
-    color: var(--main-color);
+    color:
+        var(--main-color);
 
     border-color:
         rgba(0, 238, 255, .45);
 
-    transform: scale(1.06);
+    transform:
+        scale(1.06);
 }
 
 
@@ -1156,12 +1429,14 @@ span {
 
     cursor: pointer;
 
-    transition: .25s ease;
+    transition:
+        .25s ease;
 }
 
 
 .project-dot:hover {
-    background: var(--muted-color);
+    background:
+        var(--muted-color);
 }
 
 
@@ -1169,7 +1444,8 @@ span {
     width: 1.15rem;
     height: 1.15rem;
 
-    background: var(--main-color);
+    background:
+        var(--main-color);
 
     box-shadow:
         0 0 1.2rem
@@ -1182,9 +1458,8 @@ span {
 ========================= */
 
 .contact {
-    background: var(--second-bg-color);
-
-    padding-bottom: 7rem;
+    background:
+        var(--second-bg-color);
 }
 
 
@@ -1193,13 +1468,15 @@ span {
 
     margin:
         -2.5rem auto
-        3.5rem;
+        clamp(2.5rem, 3vw, 3.5rem);
 
-    color: var(--muted-color);
+    color:
+        var(--muted-color);
 
     text-align: center;
 
-    font-size: 1.5rem;
+    font-size:
+        clamp(1.4rem, 1.3vw, 1.5rem);
 
     line-height: 1.8;
 }
@@ -1209,13 +1486,17 @@ span {
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
 
     gap: 1.5rem;
 
     max-width: 90rem;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 }
 
 
@@ -1226,7 +1507,8 @@ span {
 
     gap: 1.6rem;
 
-    padding: 2rem;
+    padding:
+        clamp(1.7rem, 2vw, 2rem);
 
     background:
         rgba(31, 36, 45, .75);
@@ -1237,14 +1519,18 @@ span {
 
     border-radius: 1.4rem;
 
-    color: var(--text-color);
+    color:
+        var(--text-color);
 
-    transition: .25s ease;
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
 }
 
 
 .contact-card[href]:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     border-color:
         rgba(0, 238, 255, .45);
@@ -1252,7 +1538,8 @@ span {
 
 
 .contact-card > i {
-    color: var(--main-color);
+    color:
+        var(--main-color);
 
     font-size: 2.5rem;
 
@@ -1267,18 +1554,21 @@ span {
 
     font-size: 1.2rem;
 
-    color: var(--muted-color);
+    color:
+        var(--muted-color);
 
     margin-bottom: .25rem;
 }
 
 
 .contact-card strong {
-    font-size: 1.35rem;
+    font-size:
+        clamp(1.25rem, 1.2vw, 1.35rem);
 
     font-weight: 600;
 
-    word-break: break-word;
+    word-break:
+        break-word;
 }
 
 
@@ -1289,28 +1579,35 @@ span {
 .footer {
     display: flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
+
     align-items: center;
 
     flex-wrap: wrap;
 
     gap: 1.5rem;
 
-    padding: 2.5rem 9%;
+    padding:
+        2.5rem
+        clamp(4.5%, 7vw, 9%);
 
-    background: #191d24;
+    background:
+        #191d24;
 }
 
 
 .footer p {
-    color: var(--muted-color);
+    color:
+        var(--muted-color);
 
     font-size: 1.25rem;
 }
 
 
 .footer p span {
-    color: var(--muted-color);
+    color:
+        var(--muted-color);
 }
 
 
@@ -1324,7 +1621,8 @@ span {
 
     color: #182027;
 
-    background: var(--main-color);
+    background:
+        var(--main-color);
 
     border-radius: .8rem;
 
@@ -1360,8 +1658,35 @@ body.light-mode .header {
 }
 
 
-body.light-mode .about-highlights div {
-    background: #f4f7fa;
+body.light-mode .about-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7f9fb
+        );
+
+    box-shadow:
+        0 2rem 5rem
+        rgba(0, 0, 0, .08);
+}
+
+
+body.light-mode .about-card::after {
+    background:
+        rgba(0, 168, 184, .06);
+}
+
+
+body.light-mode .about-highlight {
+    background:
+        #f4f7fa;
+}
+
+
+body.light-mode .about-highlight:hover {
+    background:
+        #eef5f6;
 }
 
 
@@ -1385,7 +1710,8 @@ body.light-mode
 .skills
 .container
 .bar:hover {
-    background: #f7fbfc;
+    background:
+        #f7fbfc;
 
     border-color:
         rgba(0, 168, 184, .35);
@@ -1393,6 +1719,21 @@ body.light-mode
     box-shadow:
         0 8px 20px
         rgba(0, 0, 0, .12);
+}
+
+
+body.light-mode .project-visual {
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(0, 168, 184, .12),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #eaf6f8,
+            #d9ebef
+        );
 }
 
 
@@ -1408,106 +1749,20 @@ body.light-mode .project-tech span {
 body.light-mode .project-arrow {
     background: #ffffff;
 
-    color: var(--text-color);
+    color:
+        var(--text-color);
 }
 
 
 body.light-mode .contact-card {
-    background: #f7f9fb;
+    background:
+        #f7f9fb;
 }
 
 
 body.light-mode .footer {
-    background: #e9eef2;
-}
-
-
-/* =========================
-   RESPONSIVE SKILLS
-========================= */
-
-@media (max-width: 1200px) {
-
-    .skills .container .row {
-        grid-template-columns:
-            repeat(5, minmax(0, 1fr));
-    }
-
-}
-
-
-@media (max-width: 991px) {
-
-    .skills .container .row {
-        grid-template-columns:
-            repeat(4, minmax(0, 1fr));
-    }
-
-}
-
-
-@media (max-width: 760px) {
-
-    .skills .container .row {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-
-        gap: 1.2rem;
-    }
-
-}
-
-
-@media (max-width: 520px) {
-
-    .skills .container .row {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 1rem;
-    }
-
-
-    .skills .container .bar {
-        min-height: 11.5rem;
-    }
-
-
-    .skills .container .bar .info span {
-        font-size: 1.35rem;
-    }
-
-}
-
-
-/* =========================
-   RESPONSIVE GENERAL
-========================= */
-
-@media (max-width: 1200px) {
-
-    html {
-        font-size: 58%;
-    }
-
-
-    section {
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-
-    .header,
-    .footer {
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-
-    .navbar {
-        gap: 2.2rem;
-    }
-
+    background:
+        #e9eef2;
 }
 
 
@@ -1517,73 +1772,27 @@ body.light-mode .footer {
 
 @media (max-width: 991px) {
 
-    section {
-        padding:
-            6rem 5%;
-    }
-
-
-    .header {
-        padding:
-            1.7rem 5%;
-    }
-
-
-    .navbar {
-        gap: 1.8rem;
-    }
-
-
-    .navbar a {
-        font-size: 1.45rem;
-    }
-
-
     .home {
-        min-height: 100vh;
+        min-height: auto;
 
-        flex-direction: column-reverse;
+        flex-direction:
+            column-reverse;
 
         justify-content: center;
         align-items: center;
-
-        gap: 1.8rem;
-
-        padding-top: 11rem;
 
         text-align: center;
     }
 
 
-    .home-img {
-        margin-bottom: 0;
-    }
-
-
-    .home-content h1 {
-        font-size: 5rem;
-
-        line-height: 1.08;
-
-        margin-top: 0;
-
-        margin-bottom: 1rem;
-    }
-
-
-    .home-content h2 {
-        font-size: 2.6rem;
-
-        margin:
-            0 0
-            1.6rem;
+    .home-content {
+        max-width: 72rem;
     }
 
 
     .home-copy {
-        margin:
-            0 auto
-            2.4rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 
@@ -1594,55 +1803,33 @@ body.light-mode .footer {
 
     .image-frame {
         width:
-            min(52vw, 28rem);
-    }
-
-
-    .about {
-        flex-direction: column;
-
-        gap: 3rem;
-
-        text-align: center;
-    }
-
-
-    .about-content .heading {
-        text-align: center;
-    }
-
-
-    .about-img .image-frame {
-        width:
-            min(48vw, 30rem);
+            clamp(24rem, 48vw, 30rem);
     }
 
 
     .timeline-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
-    /* PROJECT CARD */
-
     .project-card {
+        grid-template-columns:
+            1fr;
+
         height: auto;
 
         min-height: 0;
-        max-height: none;
-
-        grid-template-columns: 1fr;
     }
 
 
-    /*
-       TODOS los proyectos usan
-       exactamente esta altura.
-    */
     .project-visual {
-        height: 24rem;
+        width: 100%;
 
-        min-height: 24rem;
+        height: auto;
+
+        aspect-ratio:
+            1 / 1;
     }
 
 
@@ -1652,16 +1839,10 @@ body.light-mode .footer {
     }
 
 
-    .project-image-preview img {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-    }
-
-
     .project-content {
         height: auto;
+
+        min-height: auto;
     }
 
 }
@@ -1700,7 +1881,8 @@ body.light-mode .footer {
             1rem 5%
             2rem;
 
-        background: var(--bg-color);
+        background:
+            var(--bg-color);
 
         border-top:
             1px solid
@@ -1724,43 +1906,14 @@ body.light-mode .footer {
 
         font-size: 1.8rem;
 
-        margin: 2.4rem 0;
+        margin:
+            2.4rem 0;
     }
 
 
     body.light-mode .navbar {
-        background: #ffffff;
-    }
-
-}
-
-
-/* =========================
-   CARRUSEL TABLET
-========================= */
-
-@media (max-width: 760px) {
-
-    .carousel-row {
-        grid-template-columns:
-            4rem
-            minmax(0, 1fr)
-            4rem;
-
-        gap: 1rem;
-    }
-
-
-    .project-content {
-        padding:
-            2.8rem 2.5rem;
-    }
-
-
-    .project-arrow {
-        width: 4rem;
-
-        height: 4rem;
+        background:
+            #ffffff;
     }
 
 }
@@ -1777,57 +1930,14 @@ body.light-mode .footer {
     }
 
 
-    section {
-        padding:
-            5rem 4.5%;
-    }
-
-
-    /* HOME */
-
     .home {
-        min-height: auto;
-
-        padding:
-            10rem 4.5%
-            6.5rem;
-
-        gap: 1.6rem;
+        padding-top: 10rem;
     }
 
 
     .home-content h1 {
-        font-size: 4.3rem;
-
-        line-height: 1.08;
-
-        letter-spacing: -.1rem;
-
-        margin-bottom: 1.2rem;
-    }
-
-
-    .home-content h2 {
-        font-size: 2.35rem;
-
-        line-height: 1.3;
-
-        margin-bottom: 1.8rem;
-    }
-
-
-    .home-copy {
-        font-size: 1.45rem;
-
-        line-height: 1.7;
-
-        margin-bottom: 2.4rem;
-    }
-
-
-    .home-img .image-frame {
-        width:
-            min(47vw, 24rem);
+        letter-spacing:
+            -.1rem;
     }
 
 
@@ -1846,95 +1956,116 @@ body.light-mode .footer {
 
     /* SOBRE MÍ */
 
+    .about {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+
+    .about-card {
+        width: 100%;
+
+        padding:
+            2.5rem 1.6rem;
+
+        border-radius: 1.7rem;
+    }
+
+
+    .about-content .heading {
+        text-align: center;
+
+        margin-bottom: 1.8rem;
+    }
+
+
     .about-content > p {
+        max-width: none;
+
         text-align: left;
 
         line-height: 1.8;
     }
 
 
-    .about-content h3 {
-        line-height: 1.35;
+    .about-highlights {
+        grid-template-columns:
+            1fr;
+
+        gap: 1rem;
+
+        margin-top: 2.2rem;
     }
 
 
-    .about-highlights {
-        grid-template-columns: 1fr;
+    .about-highlight {
+        padding:
+            1.7rem 1.5rem;
     }
 
 
     /* CONTACTO */
 
     .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* PROYECTOS */
-
-    .project-content {
-        padding:
-            2.5rem 2rem;
-    }
-
-
-    .project-content h3 {
-        font-size: 2.6rem;
-    }
-
-
-    .project-content p {
-        font-size: 1.4rem;
-    }
-
-
-    /* FOOTER */
-
-    .footer {
-        padding-left: 4.5%;
-
-        padding-right: 4.5%;
+        grid-template-columns:
+            1fr;
     }
 
 }
 
 
 /* =========================
-   CARRUSEL MÓVIL
+   MÓVIL PEQUEÑO
 ========================= */
 
 @media (max-width: 520px) {
+
+    .about {
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+    }
+
+
+    .about-card {
+        padding:
+            2.4rem 1.5rem;
+    }
+
+
+    .skills .container .row {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
 
     .carousel-row {
         grid-template-columns:
             3.6rem
             minmax(0, 1fr)
             3.6rem;
-
-        gap: .6rem;
-    }
-
-
-    .projects-viewport {
-        width: 100%;
-
-        border-radius: 1.5rem;
     }
 
 
     .project-card {
-        border-radius: 1.5rem;
+        border-radius:
+            1.5rem;
+
+        height: auto;
+
+        min-height: 0;
     }
 
 
-    /*
-       Todos los proyectos
-       conservan la misma altura.
-    */
     .project-visual {
-        height: 20rem;
+        height: auto;
 
-        min-height: 20rem;
+        aspect-ratio:
+            1 / 1;
+
+        padding: .8rem;
     }
 
 
@@ -1948,33 +2079,22 @@ body.light-mode .footer {
         width: 100%;
         height: 100%;
 
-        object-fit: cover;
+        object-fit: contain;
     }
 
 
-    .project-arrow {
-        width: 3.4rem;
+    .project-content {
+        height: auto;
 
-        height: 3.4rem;
-
-        font-size: 1.2rem;
-
-        background: var(--card-color);
+        padding:
+            2.2rem 2rem;
     }
 
 
-    .project-dots {
-        margin-top: 1rem;
-    }
+    .footer {
+        justify-content: center;
 
-
-    .project-label {
-        font-size: 1rem;
-    }
-
-
-    .project-tech span {
-        font-size: 1.05rem;
+        text-align: center;
     }
 
 }
